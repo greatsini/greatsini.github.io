@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My English Coach Backup is a private, single-user database backup workflow using Google Drive.">
+  <title>My English Coach Backup</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { margin: 0; background: #f6f8fc; color: #202a35; line-height: 1.65; }
+    main { max-width: 760px; margin: 7vh auto; padding: 0 22px 48px; }
+    section { background: #fff; border: 1px solid #e1e6ee; border-radius: 14px; padding: clamp(24px,4vw,44px); }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); letter-spacing: -.035em; line-height: 1.15; }
+    h2 { margin-top: 1.8rem; font-size: 1.1rem; }
+    a { color: #275bbb; }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; background: #e8f0fe; color: #2454a0; font-size: .85rem; }
+    footer { padding: 22px 4px; font-size: .9rem; color: #586679; }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <span class="tag">Personal-use utility</span>
+      <h1>My English Coach Backup</h1>
+      <p>My English Coach Backup is a private, single-user utility intended to help its owner preserve learning records from a PostgreSQL database by storing backup archives in their own Google Drive account.</p>
+      <h2>What it does</h2>
+      <p>When configured and enabled, a scheduled GitHub Actions workflow connects to the owner's private Railway PostgreSQL instance, generates a database backup, and uploads the file to a designated private Google Drive folder using rclone. It verifies the upload's checksum and does not intentionally modify the source database.</p>
+      <h2>Why Google Drive access is requested</h2>
+      <p>Google Drive access is used to upload and verify the owner's backup archives. The OAuth permission technically grants broad access to files in the authorized Google Drive account, but the workflow is designed to operate in the designated backup folder only. It is not a public file-sharing, advertising, or analytics service.</p>
+      <h2>Availability</h2>
+      <p>This is a personal utility, not a public signup service. Backup automation may remain disabled until its owner completes configuration and testing.</p>
+      <p><strong><a href="/privacy.html">Privacy Policy</a></strong></p>
+    </section>
+    <footer>
+      Project: <a href="https://github.com/greatsini/greatsini.github.io">greatsini on GitHub</a>
+      · Last updated October 24, 2026
+    </footer>
+  </main>
+</body>
+</html>
