@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the single-user My English Coach Backup Google Drive integration.">
+  <title>Privacy Policy — My English Coach Backup</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { margin: 0; background: #f6f8fc; color: #202a35; line-height: 1.65; }
+    main { max-width: 760px; margin: 5vh auto; padding: 0 22px 48px; }
+    article { background: #fff; border: 1px solid #e1e6ee; border-radius: 14px; padding: clamp(24px,4vw,44px); }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.3rem); letter-spacing: -.03em; line-height: 1.15; }
+    h2 { margin-top: 1.8rem; font-size: 1.12rem; }
+    a { color: #275bbb; }
+    li { margin: .5rem 0; }
+    footer { padding: 22px 4px; font-size: .9rem; color: #586679; }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <p><a href="/">← Home</a></p>
+      <h1>Privacy Policy</h1>
+      <p><strong>My English Coach Backup</strong> · Effective October 24, 2026</p>
+      <p>This policy describes the intended handling of Google user data by a personal, single-user utility used by its operator. The utility may be in configuration or testing and is not offered as a public service.</p>
+
+      <h2>Google data accessed and permissions</h2>
+      <p>The utility uses the Google Drive API through the rclone command-line application, with permission authorized by the Google account owner. The <code>https://www.googleapis.com/auth/drive</code> OAuth scope technically permits viewing, creating, editing and deleting files across the authorized Google Drive account. The configured workflow is intended only to upload PostgreSQL backup archives to a designated private folder and verify their integrity using file metadata and checksums. It is not intended to browse or process other Drive files.</p>
+
+      <h2>How data is used</h2>
+      <p>When enabled, an automated workflow creates a backup of the operator's My English Coach PostgreSQL data and copies it to their own Google Drive folder. The workflow may read Google Drive file metadata needed to confirm that an archive was uploaded correctly. Google data is not used for advertising, personalized marketing, profiling, or training AI models.</p>
+
+      <h2>Storage and processing</h2>
+      <ul>
+        <li>Database backup archives are stored in the operator's own private Google Drive account. Backup files may contain personal learning records and are not publicly shared.</li>
+        <li>During a backup job, an archive is temporarily handled on a GitHub-hosted Actions runner. The workflow is designed to remove temporary files at the end of the job and does not intentionally publish backup files as build artifacts or commit them to the repository.</li>
+        <li>Google OAuth authorization credentials, including refresh tokens, are intended to be stored in GitHub Actions encrypted repository secrets, not in the public source code or this public website.</li>
+        <li>Backup archives are not separately application-encrypted by the current planned workflow. Protection relies on the access controls of the Google Drive account and the private automation environment.</li>
+      </ul>
+
+      <h2>Sharing and disclosure</h2>
+      <p>The operator does not sell Google user data, provide it to advertisers, or share it with other users. Google Drive and GitHub infrastructure are used solely for storage and execution of the intended backup operations, under their respective service terms. Information may be disclosed only if legally required.</p>
+
+      <h2>Retention and deletion</h2>
+      <p>Backups remain in the owner's Google Drive until manually deleted or removed under any retention rules the owner may set in the future. The workflow does not currently delete old backup files automatically. The owner can remove the stored archives directly in Google Drive and can revoke the app's Google account access at any time through Google Account security settings. Revoking access prevents further authorized Drive operations but does not itself delete existing backup files.</p>
+
+      <h2>Access and control</h2>
+      <p>This is a single-user utility. The authorized account owner controls its Google OAuth grant, GitHub Actions configuration and destination Drive files. If the account or backup process is no longer needed, the owner can disable the workflow and revoke the Google access grant.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this project or its privacy practices may be raised through <a href="https://github.com/greatsini/greatsini.github.io/issues">its GitHub repository issues</a>. GitHub issues are public: do not post passwords, tokens, backup contents, or private learning records.</p>
+
+      <h2>Changes</h2>
+      <p>This policy may be updated if the utility's operation or data practices change. The revised effective date and policy will be published on this page.</p>
+    </article>
+    <footer><a href="/">My English Coach Backup home</a> · Last updated October 24, 2026</footer>
+  </main>
+</body>
+</html>
